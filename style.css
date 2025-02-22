@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "Intel";
+    src: url('./fonts/Inter_24pt-Regular.ttf');
+}
+@font-face {
+    font-family: "Intel";
+    src: url('./fonts/Inter_24pt-Medium.ttf');
+    font-weight: 500;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Intel', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+.container,
+body {
+    min-height: 100%;
+    display: flex;
+}
+.container {
+    padding: 14px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+    gap: 39px;
+    
+}
+.header {
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    
+}
+.header span {
+    max-width: 150px;
+}
+.logo {
+    max-width: 301px;
+    width: 100%;
+    height: 56px;
+    background: url('./img/logo.png') 50% / contain no-repeat;
+    margin: 0 auto;
+}
+.content {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.bg {
+    position: absolute;
+    top: 10vh;
+    left: 23px;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    
+    background: url('./img/image\ 9.png') 100% / contain no-repeat;
+}
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    width: 100%;
+}
