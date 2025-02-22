@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-        <div class="header">
+        <div id="iOSPhone" class="header hidden">
             <span>Нажми на кнопку, чтобы
                 перейти в приложение</span>
             <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,13 +22,33 @@
         </div>
         <div class="content">
             <div class="logo"></div>
-           <div class="text">
-            <span>Возникли проблемы с запуском?</span>
-            <span>Воспользуйтесь устройством <br> с поддержкой ARCore или ARKit</span>
-           </div>
+            <div class="text">
+                <span>Возникли проблемы с запуском?</span>
+                <span>Воспользуйтесь устройством <br> с поддержкой ARCore или ARKit</span>
+                <div id="androidPhone" class="btn_primary hidden">Запустить</div>
+            </div>
+
         </div>
     </div>
     <div class="bg"></div>
+
+    <script>
+        function getMobileOperatingSystem() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            // Windows Phone must come first because its UA also contains "Android"
+            if (/windows phone/i.test(userAgent)) {
+                document.getElementById('androidPhone').classList.remove('hidden')
+            }
+            if (/android/i.test(userAgent)) {
+                document.getElementById('androidPhone').classList.remove('hidden')
+            }
+            // iOS detection from: http://stackoverflow.com/a/9039885/177710
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                document.getElementById('iOSPhone').classList.remove('hidden')
+            }
+            return "unknown";
+        }
+    </script>
 </body>
 
 </html>
